@@ -13,7 +13,7 @@ export const Footer = () => {
               href="/"
               className="flex items-center gap-2 text-white font-extrabold text-lg tracking-tight focus-ring rounded-md"
             >
-              <Icons.Twin className="w-5 h-5 text-blue-500" />
+              <Icons.Logo className="w-5 h-5 text-gray-300" />
               <span>APOS</span>
             </Link>
             <p className="text-secondary text-sm leading-relaxed max-w-sm">

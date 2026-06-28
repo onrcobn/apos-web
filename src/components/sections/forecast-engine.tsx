@@ -16,7 +16,7 @@ export default function ForecastEngineSection() {
       status: "Optimal Adaptation",
       badge: "success" as const,
       readiness: 82,
-      awr: "1.02",
+      acwr: "1.02",
       alert: {
         variant: "success" as const,
         title: "Balanced Progression",
@@ -27,18 +27,18 @@ export default function ForecastEngineSection() {
       status: "Neuromuscular Fatigue Projection",
       badge: "critical" as const,
       readiness: 54,
-      awr: "1.62",
+      acwr: "1.62",
       alert: {
         variant: "critical" as const,
         title: "Workload Spike Warning",
-        text: "AWR ratio exceeds 1.5. Model projects significant exhaustion risk and potential injury parameters over the next 72 hours.",
+        text: "ACWR ratio exceeds 1.5. Model projects significant exhaustion risk and potential injury parameters over the next 72 hours.",
       },
     },
     recovery: {
       status: "System Recovery Phase",
       badge: "info" as const,
       readiness: 94,
-      awr: "0.78",
+      acwr: "0.78",
       alert: {
         variant: "info" as const,
         title: "Supercompensation Achieved",
@@ -123,7 +123,7 @@ export default function ForecastEngineSection() {
                   </AnimatePresence>
                 </div>
                 <div className="p-4 rounded-lg bg-gray-950/30 border border-gray-900/50 text-center">
-                  <p className="text-[10px] text-gray-500 uppercase font-semibold">Acute/Chronic Ratio</p>
+                  <p className="text-[10px] text-gray-500 uppercase font-semibold">Acute/Chronic Ratio (ACWR)</p>
                   <AnimatePresence mode="wait">
                     <motion.p
                       key={simulation}
@@ -134,7 +134,7 @@ export default function ForecastEngineSection() {
                         simulation === "spike" ? "text-red-400" : "text-white"
                       }`}
                     >
-                      {data.awr}
+                      {data.acwr}
                     </motion.p>
                   </AnimatePresence>
                 </div>
@@ -160,27 +160,41 @@ export default function ForecastEngineSection() {
           </Card>
         </div>
 
-        {/* Details Column */}
-        <div className="lg:col-span-5 order-1 lg:order-2 space-y-6">
-          <Badge variant="info">Decision Support</Badge>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-            Adaptation & <span className="text-blue-500">Forecasting</span>
-          </h2>
-          <p className="text-secondary text-sm sm:text-base leading-relaxed">
-            The APOS Forecast Engine utilizes mathematical load modeling (Banister impulse-response model derivatives) to project athlete adaptations. Simulate scheduled sessions to predict how workloads impact future fatigue indices.
-          </p>
-          <ul className="space-y-3 text-sm text-secondary pt-2">
-            <li className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-              <span>DESCRIPTIVE DECISION-SUPPORT: Purely descriptive, non-prescription tools.</span>
+        {/* Text / Details Column */}
+        <div className="lg:col-span-6 space-y-8 order-1 lg:order-2">
+          <div className="space-y-4">
+            <Badge variant="info">Decision Support</Badge>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
+              Reducing Operational Uncertainty
+            </h2>
+            <p className="text-secondary text-sm sm:text-base leading-relaxed font-light">
+              Performance decisions will always belong to practitioners. APOS does not seek to replace the coach&apos;s intuition; rather, it ensures those daily training decisions are informed by complete biometric and workload context instead of fragmented information.
+            </p>
+            <p className="text-secondary text-sm sm:text-base leading-relaxed font-light">
+              By mapping logs against historical baselines, APOS provides clear, explainable decision-support indicators when scaling training volumes.
+            </p>
+          </div>
+          <ul className="space-y-4 text-xs sm:text-sm text-secondary font-light">
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2" />
+              <div>
+                <strong className="text-white font-semibold">Structured Decision Making:</strong>
+                <p className="mt-0.5">Model planned sessions before execution to verify that physical loads support the squad&apos;s recovery target.</p>
+              </div>
             </li>
-            <li className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-              <span>PRE-EMPT FATIGUE: Flags potential workload spikes prior to scheduled sessions.</span>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2" />
+              <div>
+                <strong className="text-white font-semibold">Fatigue Alerts:</strong>
+                <p className="mt-0.5">Receive immediate warnings if projected workload trends exceed baseline capacity bounds.</p>
+              </div>
             </li>
-            <li className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-              <span>WHAT-IF SCENARIOS: Adjust intensity maps dynamically to preview response cycles.</span>
+            <li className="flex items-start gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2" />
+              <div>
+                <strong className="text-white font-semibold">Staff Collaboration:</strong>
+                <p className="mt-0.5">Coordinate physical targets across coaching staff with shared, consistent indicators.</p>
+              </div>
             </li>
           </ul>
         </div>

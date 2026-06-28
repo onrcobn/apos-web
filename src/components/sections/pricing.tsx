@@ -9,14 +9,28 @@ import { Section } from "../ui/section";
 export default function PricingSection() {
   const tiers = [
     {
+      name: "Free",
+      price: "$0",
+      description: "For individual athletes self-monitoring capacity.",
+      features: [
+        "1 active athlete maximum",
+        "Local data storage only",
+        "Basic morning check-ins",
+        "No shared coaching workspaces",
+        "Standard community support",
+      ],
+      cta: "Use Free Mode",
+      accent: false,
+    },
+    {
       name: "Pro",
-      price: "$5.90",
+      price: "$250",
       description: "Ideal for individual strength coaches and personal trainers.",
       features: [
-        "Up to 15 active athlete twins",
-        "Continuous HRV & Sleep metrics mapping",
-        "Standard adaptation forecasting",
-        "Descriptive decision-support simulator",
+        "Up to 15 active athletes",
+        "Biometric status mapping",
+        "Workload adaptation forecasting",
+        "Microcycle simulation tools",
         "Standard email support",
       ],
       cta: "Get Started Pro",
@@ -24,14 +38,14 @@ export default function PricingSection() {
     },
     {
       name: "Elite",
-      price: "$9.90",
+      price: "$450",
       description: "Designed for sports academies, universities, and professional clubs.",
       features: [
-        "Up to 30 active athlete twins",
-        "Continuous HRV & Sleep metrics mapping",
-        "Advanced load adaptation forecasting",
-        "Fully detailed What-if simulator",
-        "Organization-owned data workspaces",
+        "Up to 30 active athletes",
+        "Biometric status mapping",
+        "Workload adaptation forecasting",
+        "Microcycle simulation tools",
+        "Organization-owned workspaces",
         "Priority support access",
       ],
       cta: "Get Started Elite",
@@ -40,20 +54,19 @@ export default function PricingSection() {
   ];
 
   return (
-    <Section id="pricing" className="bg-gray-950/20 border-b border-gray-900/60">
+    <Section id="pricing" className="bg-gray-950/20 border-b border-gray-900/60 py-28">
       <div className="space-y-12">
         <div className="text-center space-y-4 max-w-2xl mx-auto">
-          <Badge variant="info">Pricing & Tiers</Badge>
+          <Badge variant="info">Pricing & Licensing</Badge>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Transparent, Fixed Subscriptions
+            Simple Annual Licensing
           </h2>
-          <p className="text-secondary text-sm sm:text-base leading-relaxed">
-            Choose the operational volume required by your performance group. All subscriptions are
-            billed securely via standard Apple accounts.
+          <p className="text-secondary text-sm sm:text-base leading-relaxed font-light">
+            Licenses are billed annually. Pricing tiers reflect organizational scale and active athlete volume constraints, rather than arbitrary feature restrictions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
           {tiers.map((tier) => (
             <Card
               key={tier.name}
@@ -72,13 +85,13 @@ export default function PricingSection() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-lg font-bold text-white tracking-wide">{tier.name}</h3>
-                  <p className="text-secondary text-xs mt-1 leading-relaxed">{tier.description}</p>
+                  <p className="text-secondary text-xs mt-1 leading-relaxed font-light">{tier.description}</p>
                 </div>
 
                 <div className="flex items-baseline gap-1.5">
                   <span className="text-4xl font-extrabold text-white">{tier.price}</span>
                   <span className="text-secondary text-xs font-semibold uppercase tracking-wider">
-                    / month
+                    / year
                   </span>
                 </div>
 
@@ -96,7 +109,7 @@ export default function PricingSection() {
 
               <div className="pt-8 space-y-4">
                 <Button variant={tier.accent ? "primary" : "outline"} className="w-full">
-                  {tier.cta}
+                  {tier.name === "Free" ? "Select Free License" : tier.name === "Pro" ? "Select Pro License" : "Select Elite License"}
                 </Button>
               </div>
             </Card>
@@ -104,23 +117,22 @@ export default function PricingSection() {
         </div>
 
         {/* Billed Information */}
-        <div className="max-w-2xl mx-auto rounded-lg bg-gray-950/40 border border-gray-900/60 p-6 text-xs text-secondary leading-relaxed space-y-3">
-          <p className="font-semibold text-gray-300">Subscription &amp; Ownership Disclosures</p>
-          <ul className="space-y-2 list-disc list-inside">
-            <li>
-              <strong>Apple Subscriptions:</strong> Subscriptions are managed directly under your
-              Apple ID. Cancel anytime through Apple Settings.
-            </li>
-            <li>
-              <strong>Refund Information:</strong> Billing and payment processing are subject
-              strictly to Apple App Store policies.
-            </li>
-            <li>
-              <strong>Data Ownership:</strong> All athlete profiles, organization structures, and
-              diagnostic histories are organization-owned. We maintain no claim of ownership over
-              telemetry data.
-            </li>
-          </ul>
+        <div className="max-w-3xl mx-auto rounded-xl bg-gray-950/40 border border-gray-900 p-8 text-xs text-secondary leading-relaxed space-y-4">
+          <p className="font-semibold text-gray-300 text-sm">Predictable Volume Licensing</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-light">
+            <div className="space-y-1">
+              <strong className="text-white font-medium">Transaction Safety</strong>
+              <p>All subscription lifecycles are processed securely through standard Apple ID agreements. Cancel or adjust allocations instantly inside iOS Settings.</p>
+            </div>
+            <div className="space-y-1">
+              <strong className="text-white font-medium">Sovereignty Rights</strong>
+              <p>Organizations retain complete ownership of all historical metrics and logs. APOS maintains no proprietary claims over athlete diagnostic data.</p>
+            </div>
+            <div className="space-y-1">
+              <strong className="text-white font-medium">Compliance Architecture</strong>
+              <p>Supports native GDPR data erasure and export requests. Perform full JSON schema exports directly from the settings panel.</p>
+            </div>
+          </div>
         </div>
       </div>
     </Section>

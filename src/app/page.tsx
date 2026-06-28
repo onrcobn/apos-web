@@ -1,6 +1,8 @@
 import Hero from "@/components/sections/hero";
+import WorkflowSection from "@/components/sections/workflow";
 import DigitalTwinSection from "@/components/sections/digital-twin";
 import ForecastEngineSection from "@/components/sections/forecast-engine";
+import ReliabilitySection from "@/components/sections/reliability";
 import FeaturesSection from "@/components/sections/features";
 import PricingSection from "@/components/sections/pricing";
 import FAQSection from "@/components/sections/faq";
@@ -15,11 +17,11 @@ export default function Home() {
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "USD",
-      lowPrice: "5.90",
-      highPrice: "9.90",
-      priceValued: "monthly",
+      lowPrice: "250.00",
+      highPrice: "450.00",
+      priceValued: "yearly",
     },
-    description: "Athletic Performance Optimization System for coaches and elite athletes.",
+    description: "APOS organizes daily performance operations and coordinates athlete records.",
   };
 
   return (
@@ -29,8 +31,10 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Hero />
+      <WorkflowSection />
       <DigitalTwinSection />
       <ForecastEngineSection />
+      <ReliabilitySection />
       <FeaturesSection />
       <PricingSection />
       <FAQSection />

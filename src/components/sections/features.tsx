@@ -6,79 +6,105 @@ import { Icons } from "../ui/icons";
 import { Section } from "../ui/section";
 
 export default function FeaturesSection() {
-  const features = [
+  const comparison = [
     {
-      title: "Digital Twin Synthesis",
-      description:
-        "Aggregates physiological markers into a mathematical replica of adaptation states.",
-      icon: Icons.Twin,
+      dimension: "Daily Workflows",
+      before: "Disconnected files, manual text updates, and email logs.",
+      after: "One integrated workspace aligning coaches and performance staff around a single baseline.",
     },
     {
-      title: "Adaptation Forecasting",
-      description:
-        "Projects responses and flags fatigue indicators using advanced load kinetics.",
-      icon: Icons.Forecast,
+      dimension: "Performance History",
+      before: "Manual files vulnerable to calculation drift, data gaps, and record decay.",
+      after: "A structured, permanent record capturing longitudinal athlete histories consistently.",
     },
     {
-      title: "Apple Health Import",
-      description:
-        "Continuous read-only synchronization of Sleep, HRV, and Resting Heart Rate telemetry.",
-      icon: Icons.Security,
+      dimension: "Staff Collaboration",
+      before: "Individual performance knowledge locked in personal notes and silos.",
+      after: "Shared organizational records coordinating all support staff to reduce operational uncertainty.",
     },
     {
-      title: "What-If Simulation",
-      description:
-        "Run hypothetical microcycles to observe changes in readiness coefficients.",
-      icon: Icons.Play,
-    },
-    {
-      title: "Athlete Check-Ins",
-      description:
-        "Morning wellness check-ins combined with immediate post-session performance feedback.",
-      icon: Icons.CheckIn,
-    },
-    {
-      title: "Data Sovereignty (GDPR)",
-      description:
-        "Right of export and erasure (Articles 15–21) built natively into client dashboards.",
-      icon: Icons.Erasure,
+      dimension: "Decision Integrity",
+      before: "Reactive training adjustments made after exhaustion or physical overload occurs.",
+      after: "Consistent daily decision support projecting workload adaptations to protect athlete availability.",
     },
   ];
 
   return (
-    <Section id="features" className="bg-background">
-      <div className="space-y-12">
+    <Section id="features" className="bg-background py-28">
+      <div className="space-y-16">
         <div className="text-center space-y-4 max-w-2xl mx-auto">
-          <Badge variant="info">Complete Capabilities</Badge>
+          <Badge variant="info">Operational Maturity</Badge>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-            Engineered for Elite Outcomes
+            Operational Progression
           </h2>
-          <p className="text-secondary text-sm sm:text-base leading-relaxed">
-            APOS delivers scientifically grounded telemetry models without fitness influencer gimmicks.
-            Pure, objective decision support.
+          <p className="text-secondary text-sm sm:text-base leading-relaxed font-light">
+            Transition your department from disconnected tracking methods to a coordinated Performance Operations Platform.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((feat) => {
-            const Icon = feat.icon;
-            return (
-              <Card
-                key={feat.title}
-                className="bg-gray-950/20 border border-gray-900/60 p-6 flex flex-col justify-between hover:border-blue-500/20 transition-all duration-300"
+        <div className="max-w-5xl mx-auto space-y-4">
+          {/* Header Row - visible on desktop */}
+          <div className="hidden md:grid grid-cols-12 gap-6 px-6 pb-2 text-[10px] font-bold text-gray-500 uppercase tracking-widest border-b border-gray-900">
+            <div className="col-span-3">Dimension</div>
+            <div className="col-span-4">Fragmented Operations</div>
+            <div className="col-span-5">APOS Performance Operations</div>
+          </div>
+
+          {/* Matrix Rows */}
+          <div className="divide-y divide-gray-900 border-b border-gray-900 md:border-b-0">
+            {comparison.map((item, idx) => (
+              <div
+                key={idx}
+                className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 py-6 px-6 items-start hover:bg-gray-950/20 rounded-xl transition-colors duration-200"
               >
-                <div className="space-y-4">
-                  <div className="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <h3 className="text-base font-semibold text-white tracking-wide">{feat.title}</h3>
-                  <p className="text-secondary text-xs sm:text-sm leading-relaxed">
-                    {feat.description}
-                  </p>
+                {/* Dimension */}
+                <div className="col-span-1 md:col-span-3">
+                  <h3 className="text-sm font-semibold text-white tracking-wide">{item.dimension}</h3>
                 </div>
-              </Card>
-            );
-          })}
+
+                {/* Fragmented (Before) */}
+                <div className="col-span-1 md:col-span-4 flex gap-2 text-xs sm:text-sm text-secondary font-light">
+                  <span className="text-red-500 font-semibold shrink-0">✕</span>
+                  <span>{item.before}</span>
+                </div>
+
+                {/* Coordinated (After) */}
+                <div className="col-span-1 md:col-span-5 flex gap-2 text-xs sm:text-sm text-gray-200 font-light">
+                  <span className="text-emerald-400 font-semibold shrink-0">✓</span>
+                  <span>{item.after}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Why Organizations Adopt APOS Grid */}
+        <div className="max-w-5xl mx-auto pt-16 border-t border-gray-900/60 space-y-12">
+          <div className="text-center space-y-3 max-w-xl mx-auto">
+            <Badge variant="info">Operational Impact</Badge>
+            <h3 className="text-xl font-bold text-white tracking-tight">Why Organizations Adopt APOS</h3>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold text-white tracking-wide">Turnover Resilience</h4>
+              <p className="text-secondary text-xs sm:text-sm leading-relaxed font-light">
+                Athlete records are permanent. When coaching staff changes, historical physical capacity baselines survive the transition, preventing database records loss.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold text-white tracking-wide">Unified Medical & Coaching Context</h4>
+              <p className="text-secondary text-xs sm:text-sm leading-relaxed font-light">
+                Wellness check-ins and screening notes live together. Important observation flags are never buried in personal text messages or disconnected docs.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <h4 className="text-sm font-semibold text-white tracking-wide">Explainable Decisions</h4>
+              <p className="text-secondary text-xs sm:text-sm leading-relaxed font-light">
+                All daily training volume and recovery adjustments remain documented and explainable months later during high-performance season audits.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </Section>

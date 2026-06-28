@@ -54,62 +54,62 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 export default function FAQSection() {
   const faqs = [
     {
-      key: "hrv",
-      question: "How does HRV tracking work in APOS?",
+      key: "billing",
+      question: "How is billing handled?",
       answer: (
         <p>
-          APOS reads Heart Rate Variability (HRV) using root mean square of successive differences
-          (RMSSD) telemetry directly from your Apple Health database (Read-Only). We recommend
-          completing an Apple Watch Breathe session or sleep tracking to establish a reliable daily
-          baseline.
+          Billing is processed securely through your Apple ID account on an annual basis.
+          Transactions are handled directly by Apple StoreKit, with no hidden fees or extra transaction costs.
         </p>
       ),
     },
     {
-      key: "readiness",
-      question: "How is the daily Readiness Score calculated?",
+      key: "cancel",
+      question: "Can I cancel anytime?",
       answer: (
         <p>
-          Our normalization engine computes z-scores across a rolling 21-day baseline for HRV,
-          sleep parameters, and resting heart rate. These values are weighted against acute training
-          loads to forecast adaptive reserve indices and identify potential neuromuscular fatigue
-          markers.
+          Yes. You can cancel or modify your annual licensing choice at any time inside your iOS Settings (under Apple ID Subscriptions).
+          Access to your active plan details remains active until your current annual billing period ends.
         </p>
       ),
     },
     {
-      key: "coaches",
-      question: "Can coaches monitor teams or multiple cohorts?",
+      key: "ownership",
+      question: "Who owns my data?",
       answer: (
         <p>
-          Yes. The Coach Dashboard is designed for high-performance clubs, academies, and
-          universities. Coaches can organize athletes into custom squads, monitor team-wide
-          workload ratios, and receive automated flags for acute-to-chronic workload ratio (ACWR)
-          spikes.
+          Your organization owns 100% of the athlete capacity histories and daily logs.
+          APOS is a performance tool and maintains no claim of ownership or proprietary rights over your data.
         </p>
       ),
     },
     {
-      key: "gdpr",
-      question: "How do I export or delete my organization data?",
+      key: "export",
+      question: "Can I export my data?",
       answer: (
         <p>
-          Under GDPR Articles 15–21, you retain full sovereignty over your data. Coaches and
-          administrators can request a complete GDPR-compliant JSON data export or execute a
-          permanent right-of-erasure (deletion) command from the organization settings panel at any
-          time.
+          Yes. Coaches and workspace administrators can request a complete, structured JSON export of all athlete logs
+          and profiles at any time directly from the settings panel.
         </p>
       ),
     },
     {
-      key: "subscriptions",
-      question: "How do subscriptions and billing work?",
+      key: "single-athlete",
+      question: "Can I start with one athlete?",
       answer: (
         <p>
-          Subscriptions are managed strictly through Apple Subscriptions and linked to your Apple ID.
-          The Pro tier ($5.90/month, up to 15 athletes) and Elite tier ($9.90/month, up to 30
-          athletes) are billed on a recurring monthly cycle. You can cancel or modify your plan at
-          any time through Apple ID account settings.
+          Yes. The Free license supports monitoring for 1 active athlete. You can transition to Pro (up to 15 active athletes)
+          or Elite (up to 30 active athletes) as your organization grows.
+        </p>
+      ),
+    },
+    {
+      key: "multiple-coaches",
+      question: "Does my organization need multiple coaches?",
+      answer: (
+        <p>
+          No. You can manage your entire squad under a single coach workspace.
+          Under Pro and Elite licenses, coaches can organize active rosters and coordinate views with other support staff.
         </p>
       ),
     },

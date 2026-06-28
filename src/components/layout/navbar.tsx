@@ -33,7 +33,7 @@ export const Navbar = () => {
           className="flex items-center gap-2 focus-ring rounded-md transition-opacity hover:opacity-90"
           aria-label="APOS Home"
         >
-          <Icons.Twin className="w-6 h-6 text-blue-500 animate-pulse" />
+          <Icons.Logo className="w-6 h-6 text-gray-300" />
           <span className="font-extrabold text-lg tracking-tight text-white">APOS</span>
         </Link>
 
