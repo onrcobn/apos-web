@@ -23,6 +23,20 @@ export default function PricingSection() {
       accent: false,
     },
     {
+      name: "Starter",
+      price: "$100",
+      description: "Essential tools for small teams or individual coaches.",
+      features: [
+        "Up to 5 active athletes",
+        "Biometric status mapping",
+        "Basic morning check-ins",
+        "Shared coaching workspaces",
+        "Standard email support",
+      ],
+      cta: "Get Started Starter",
+      accent: false,
+    },
+    {
       name: "Pro",
       price: "$250",
       description: "Ideal for individual strength coaches and personal trainers.",
@@ -51,6 +65,21 @@ export default function PricingSection() {
       cta: "Get Started Elite",
       accent: true,
     },
+    {
+      name: "Team",
+      price: "$650",
+      description: "Ultimate capacity for larger athletic departments and teams.",
+      features: [
+        "Up to 50 active athletes",
+        "Biometric status mapping",
+        "Workload adaptation forecasting",
+        "Microcycle simulation tools",
+        "Dedicated priority support",
+        "Custom workflow options",
+      ],
+      cta: "Get Started Team",
+      accent: false,
+    },
   ];
 
   return (
@@ -66,7 +95,7 @@ export default function PricingSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto items-stretch">
           {tiers.map((tier) => (
             <Card
               key={tier.name}
@@ -109,7 +138,7 @@ export default function PricingSection() {
 
               <div className="pt-8 space-y-4">
                 <Button variant={tier.accent ? "primary" : "outline"} className="w-full">
-                  {tier.name === "Free" ? "Select Free License" : tier.name === "Pro" ? "Select Pro License" : "Select Elite License"}
+                  {tier.name === "Free" ? "Select Free License" : `Select ${tier.name} License`}
                 </Button>
               </div>
             </Card>

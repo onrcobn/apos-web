@@ -98,8 +98,7 @@ export default function FAQSection() {
       question: "Can I start with one athlete?",
       answer: (
         <p>
-          Yes. The Free license supports monitoring for 1 active athlete. You can transition to Pro (up to 15 active athletes)
-          or Elite (up to 30 active athletes) as your organization grows.
+          Yes. The Free license supports monitoring for 1 active athlete. You can transition to Starter (up to 5), Pro (up to 15), Elite (up to 30), or Team (up to 50 active athletes) as your organization grows.
         </p>
       ),
     },
@@ -109,7 +108,7 @@ export default function FAQSection() {
       answer: (
         <p>
           No. You can manage your entire squad under a single coach workspace.
-          Under Pro and Elite licenses, coaches can organize active rosters and coordinate views with other support staff.
+          Under Starter, Pro, Elite, and Team licenses, coaches can organize active rosters and coordinate views with other support staff.
         </p>
       ),
     },

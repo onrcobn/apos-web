@@ -53,16 +53,24 @@ export default function TermsPage() {
                 2. Subscription Tiers &amp; Apple ID Purchases
               </h2>
               <p>
-                APOS offers monthly subscription tiers handled securely through Apple Subscriptions:
+                APOS offers subscription tiers handled securely through Apple Subscriptions:
               </p>
               <ul className="list-disc list-inside space-y-1.5 pl-2">
                 <li>
-                  <strong>Pro Tier:</strong> Billed at **$5.90/month**, allowing the creation of up
+                  <strong>Starter Tier:</strong> Billed at **$100.00/year**, allowing the creation of up
+                  to **5 active athlete twin** dashboards.
+                </li>
+                <li>
+                  <strong>Pro Tier:</strong> Billed at **$250.00/year**, allowing the creation of up
                   to **15 active athlete twin** dashboards.
                 </li>
                 <li>
-                  <strong>Elite Tier:</strong> Billed at **$9.90/month**, allowing the creation of
+                  <strong>Elite Tier:</strong> Billed at **$450.00/year**, allowing the creation of
                   up to **30 active athlete twin** dashboards.
+                </li>
+                <li>
+                  <strong>Team Tier:</strong> Billed at **$650.00/year**, allowing the creation of
+                  up to **50 active athlete twin** dashboards.
                 </li>
               </ul>
               <p>
@@ -107,7 +115,7 @@ export default function TermsPage() {
                 5. Cancellation &amp; Deletion
               </h2>
               <p>
-                You may cancel your monthly subscription through standard Apple ID subscriptions at any
+                You may cancel your annual subscription through standard Apple ID subscriptions at any
                 time. Account deletion requests (pursuant to GDPR right-of-erasure) can be executed
                 directly inside the application or requested via our Support Hub.
               </p>

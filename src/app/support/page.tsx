@@ -42,7 +42,7 @@ export default function SupportPage() {
               <div>
                 <h4 className="text-sm font-semibold text-white">Subscription Management</h4>
                 <p className="text-secondary text-xs mt-1 leading-relaxed">
-                  All subscriptions (Pro $5.90/mo, Elite $9.90/mo) are managed directly on the App Store.
+                  All subscriptions (Starter $100/yr, Pro $250/yr, Elite $450/yr, Team $650/yr) are managed directly on the App Store.
                   To cancel or update your plan, navigate to your iOS device: Settings &gt; [Your Name]
                   &gt; Subscriptions.
                 </p>
